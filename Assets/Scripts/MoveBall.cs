@@ -13,6 +13,9 @@ public class MoveBall : MonoBehaviour
     private bool isTouching = false;
     private int Counter;
     public TextMeshProUGUI cointext;
+    public AudioSource aSource;
+    public AudioClip aClip;
+
 
 void Start()
     {
@@ -70,6 +73,7 @@ void Start()
             other.gameObject.SetActive(false);
             Counter--;
             cointext.text = "COINS: "+ Counter;
+            aSource.PlayOneShot(aClip);
 
             if(Counter == 0)
             {
